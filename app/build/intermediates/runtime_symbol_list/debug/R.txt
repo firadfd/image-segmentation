@@ -2684,6 +2684,7 @@ int id bounce 0x7f090063
 int id bounceBoth 0x7f090064
 int id bounceEnd 0x7f090065
 int id bounceStart 0x7f090066
+int id button 0x7f090206
 int id buttonPanel 0x7f090067
 int id cache_measures 0x7f090068
 int id callMeasure 0x7f090069
@@ -2730,6 +2731,7 @@ int id currentState 0x7f090091
 int id custom 0x7f090092
 int id customPanel 0x7f090093
 int id cut 0x7f090094
+int id dataBinding 0x7f090207
 int id date_picker_actions 0x7f090095
 int id decelerate 0x7f090096
 int id decelerateAndComplete 0x7f090097
@@ -2922,6 +2924,8 @@ int id notification_main_column 0x7f090151
 int id notification_main_column_container 0x7f090152
 int id off 0x7f090153
 int id on 0x7f090154
+int id onAttachStateChangeListener 0x7f090208
+int id onDateChanged 0x7f090209
 int id onInterceptTouchReturnSwipe 0x7f090155
 int id outline 0x7f090156
 int id outward 0x7f090157
@@ -3046,6 +3050,7 @@ int id textSpacerNoButtons 0x7f0901cd
 int id textSpacerNoTitle 0x7f0901ce
 int id textStart 0x7f0901cf
 int id textTop 0x7f0901d0
+int id textWatcher 0x7f09020a
 int id text_input_end_icon 0x7f0901d1
 int id text_input_error_icon 0x7f0901d2
 int id text_input_start_icon 0x7f0901d3
@@ -3194,6 +3199,7 @@ int layout abc_search_view 0x7f0c0019
 int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
 int layout activity_main 0x7f0c001c
+int layout activity_pick_image 0x7f0c007a
 int layout custom_dialog 0x7f0c001d
 int layout design_bottom_navigation_item 0x7f0c001e
 int layout design_bottom_sheet_dialog 0x7f0c001f

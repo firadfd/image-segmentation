@@ -1,18 +1,22 @@
 [
     {
-        "merged": "org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-40:/layout/activity_main.xml",
-        "source": "org.tensorflow.lite.examples.imagesegmentation.app-main-43:/layout/activity_main.xml"
+        "merged": "org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-42:/layout/activity_main.xml",
+        "source": "org.tensorflow.lite.examples.imagesegmentation.app-main-45:/layout/activity_main.xml"
     },
     {
-        "merged": "org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-40:/layout/fragment_camera.xml",
-        "source": "org.tensorflow.lite.examples.imagesegmentation.app-main-43:/layout/fragment_camera.xml"
+        "merged": "org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-42:/layout/fragment_camera.xml",
+        "source": "org.tensorflow.lite.examples.imagesegmentation.app-main-45:/layout/fragment_camera.xml"
     },
     {
-        "merged": "org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-40:/layout/info_bottom_sheet.xml",
-        "source": "org.tensorflow.lite.examples.imagesegmentation.app-main-43:/layout/info_bottom_sheet.xml"
+        "merged": "org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-42:/layout/activity_pick_image.xml",
+        "source": "org.tensorflow.lite.examples.imagesegmentation.app-main-45:/layout/activity_pick_image.xml"
     },
     {
-        "merged": "org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-40:/layout/item_color_labels.xml",
-        "source": "org.tensorflow.lite.examples.imagesegmentation.app-main-43:/layout/item_color_labels.xml"
+        "merged": "org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-42:/layout/item_color_labels.xml",
+        "source": "org.tensorflow.lite.examples.imagesegmentation.app-main-45:/layout/item_color_labels.xml"
+    },
+    {
+        "merged": "org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-42:/layout/info_bottom_sheet.xml",
+        "source": "org.tensorflow.lite.examples.imagesegmentation.app-main-45:/layout/info_bottom_sheet.xml"
     }
 ]

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-39:/values-ta/values-ta.xml",
+            "outputFile": "org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-41:/values-ta/values-ta.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mdfir\\.gradle\\caches\\transforms-3\\18464301881f4f63c70152bb1e8fbe27\\transformed\\material-1.6.1\\res\\values-ta\\values-ta.xml",
