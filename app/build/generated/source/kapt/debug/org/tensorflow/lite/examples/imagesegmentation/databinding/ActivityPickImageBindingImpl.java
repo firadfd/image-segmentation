@@ -14,7 +14,8 @@ public class ActivityPickImageBindingImpl extends ActivityPickImageBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.button, 1);
+        sViewsWithIds.put(R.id.overlay, 1);
+        sViewsWithIds.put(R.id.button, 2);
     }
     // views
     @NonNull
@@ -25,11 +26,12 @@ public class ActivityPickImageBindingImpl extends ActivityPickImageBinding  {
     // Inverse Binding Event Handlers
 
     public ActivityPickImageBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 2, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 3, sIncludes, sViewsWithIds));
     }
     private ActivityPickImageBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[1]
+            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[2]
+            , (org.tensorflow.lite.examples.imagesegmentation.OverlayView) bindings[1]
             );
         this.mboundView0 = (android.widget.RelativeLayout) bindings[0];
         this.mboundView0.setTag(null);

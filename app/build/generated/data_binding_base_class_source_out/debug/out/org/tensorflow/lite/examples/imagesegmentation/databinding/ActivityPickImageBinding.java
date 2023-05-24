@@ -4,23 +4,28 @@ package org.tensorflow.lite.examples.imagesegmentation.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.Deprecated;
 import java.lang.Object;
+import org.tensorflow.lite.examples.imagesegmentation.OverlayView;
 import org.tensorflow.lite.examples.imagesegmentation.R;
 
 public abstract class ActivityPickImageBinding extends ViewDataBinding {
   @NonNull
-  public final Button button;
+  public final FloatingActionButton button;
+
+  @NonNull
+  public final OverlayView overlay;
 
   protected ActivityPickImageBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button button) {
+      FloatingActionButton button, OverlayView overlay) {
     super(_bindingComponent, _root, _localFieldCount);
     this.button = button;
+    this.overlay = overlay;
   }
 
   @NonNull

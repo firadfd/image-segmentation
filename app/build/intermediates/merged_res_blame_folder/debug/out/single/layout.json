@@ -1,22 +1,26 @@
 [
     {
-        "merged": "org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-42:/layout/activity_main.xml",
-        "source": "org.tensorflow.lite.examples.imagesegmentation.app-main-45:/layout/activity_main.xml"
+        "merged": "C:\\Users\\mdfir\\.gradle\\daemon\\7.6.1\\org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-42:\\layout\\fragment_camera.xml",
+        "source": "C:\\Users\\mdfir\\.gradle\\daemon\\7.6.1\\org.tensorflow.lite.examples.imagesegmentation.app-main-45:\\layout\\fragment_camera.xml"
     },
     {
-        "merged": "org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-42:/layout/fragment_camera.xml",
-        "source": "org.tensorflow.lite.examples.imagesegmentation.app-main-45:/layout/fragment_camera.xml"
+        "merged": "C:\\Users\\mdfir\\.gradle\\daemon\\7.6.1\\org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-42:\\layout\\activity_pick_image.xml",
+        "source": "C:\\Users\\mdfir\\.gradle\\daemon\\7.6.1\\org.tensorflow.lite.examples.imagesegmentation.app-main-45:\\layout\\activity_pick_image.xml"
+    },
+    {
+        "merged": "C:\\Users\\mdfir\\.gradle\\daemon\\7.6.1\\org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-42:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\mdfir\\.gradle\\daemon\\7.6.1\\org.tensorflow.lite.examples.imagesegmentation.app-main-45:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\mdfir\\.gradle\\daemon\\7.6.1\\org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-42:\\layout\\info_bottom_sheet.xml",
+        "source": "C:\\Users\\mdfir\\.gradle\\daemon\\7.6.1\\org.tensorflow.lite.examples.imagesegmentation.app-main-45:\\layout\\info_bottom_sheet.xml"
     },
     {
         "merged": "org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-42:/layout/activity_pick_image.xml",
         "source": "org.tensorflow.lite.examples.imagesegmentation.app-main-45:/layout/activity_pick_image.xml"
     },
     {
-        "merged": "org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-42:/layout/item_color_labels.xml",
-        "source": "org.tensorflow.lite.examples.imagesegmentation.app-main-45:/layout/item_color_labels.xml"
-    },
-    {
-        "merged": "org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-42:/layout/info_bottom_sheet.xml",
-        "source": "org.tensorflow.lite.examples.imagesegmentation.app-main-45:/layout/info_bottom_sheet.xml"
+        "merged": "C:\\Users\\mdfir\\.gradle\\daemon\\7.6.1\\org.tensorflow.lite.examples.imagesegmentation.app-mergeDebugResources-42:\\layout\\item_color_labels.xml",
+        "source": "C:\\Users\\mdfir\\.gradle\\daemon\\7.6.1\\org.tensorflow.lite.examples.imagesegmentation.app-main-45:\\layout\\item_color_labels.xml"
     }
 ]

@@ -22,7 +22,6 @@ import android.os.Build
 import android.os.SystemClock
 import android.util.Log
 import androidx.annotation.RequiresApi
-import androidx.core.graphics.get
 import org.tensorflow.lite.gpu.CompatibilityList
 import org.tensorflow.lite.support.image.ImageProcessor
 import org.tensorflow.lite.support.image.TensorImage
@@ -31,7 +30,6 @@ import org.tensorflow.lite.task.core.BaseOptions
 import org.tensorflow.lite.task.vision.segmenter.ImageSegmenter
 import org.tensorflow.lite.task.vision.segmenter.OutputType
 import org.tensorflow.lite.task.vision.segmenter.Segmentation
-import java.lang.Exception
 import java.util.*
 
 /**
@@ -73,6 +71,7 @@ class ImageSegmentationHelper(
             DELEGATE_CPU -> {
                 // Default
             }
+
             DELEGATE_GPU -> {
                 if (CompatibilityList().isDelegateSupportedOnThisDevice) {
                     baseOptionsBuilder.useGpu()
@@ -80,6 +79,7 @@ class ImageSegmentationHelper(
                     imageSegmentationListener?.onError("GPU is not supported on this device")
                 }
             }
+
             DELEGATE_NNAPI -> {
                 baseOptionsBuilder.useNnapi()
             }

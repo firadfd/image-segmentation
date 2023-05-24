@@ -59,7 +59,7 @@ class PickImageActivity : AppCompatActivity(), ImageSegmentationHelper.Segmentat
                 val imageRotation = getImageRotation(this@PickImageActivity, selectedImageUri)
 
                 if (imageBitmap != null) {
-//                    imageSegmentationHelper.segment(imageBitmap, imageRotation)
+                    imageSegmentationHelper.segment(imageBitmap, imageRotation)
                 }
             }
 
@@ -131,20 +131,21 @@ class PickImageActivity : AppCompatActivity(), ImageSegmentationHelper.Segmentat
         imageHeight: Int,
         imageWidth: Int
     ) {
-//        this.runOnUiThread {
-////            fragmentCameraBinding.bottomSheetLayout.inferenceTimeVal.text =
-////                String.format("%d ms", inferenceTime)
-//
-//            // Pass necessary information to OverlayView for drawing on the canvas
-//            fragmentCameraBinding.overlay.setResults(
-//                results,
-//                imageHeight,
-//                imageWidth
-//            )
-//
-//            // Force a redraw
-//            fragmentCameraBinding.overlay.invalidate()
-//        }
+        this.runOnUiThread {
+//            fragmentCameraBinding.bottomSheetLayout.inferenceTimeVal.text =
+//                String.format("%d ms", inferenceTime)
+
+            // Pass necessary information to OverlayView for drawing on the canvas
+
+            binding.overlay.setResults(
+                results,
+                imageHeight,
+                imageWidth
+            )
+
+            // Force a redraw
+            binding.overlay.invalidate()
+        }
     }
 
 
