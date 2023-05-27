@@ -4,8 +4,8 @@
         "source": "C:\\Users\\mdfir\\.gradle\\daemon\\7.6.1\\org.tensorflow.lite.examples.imagesegmentation.app-main-45:\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "org.tensorflow.lite.examples.imagesegmentation.app-merged_res-43:/drawable_add.xml.flat",
-        "source": "org.tensorflow.lite.examples.imagesegmentation.app-main-45:/drawable/add.xml"
+        "merged": "C:\\Users\\mdfir\\.gradle\\daemon\\7.6.1\\org.tensorflow.lite.examples.imagesegmentation.app-merged_res-43:\\drawable_add.xml.flat",
+        "source": "C:\\Users\\mdfir\\.gradle\\daemon\\7.6.1\\org.tensorflow.lite.examples.imagesegmentation.app-main-45:\\drawable\\add.xml"
     },
     {
         "merged": "C:\\Users\\mdfir\\.gradle\\daemon\\7.6.1\\org.tensorflow.lite.examples.imagesegmentation.app-merged_res-43:\\mipmap-mdpi_ic_launcher_round.png.flat",

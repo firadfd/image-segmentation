@@ -4,8 +4,10 @@ import android.app.Activity
 import android.content.ContentResolver
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Matrix
 import android.media.ExifInterface
 import android.net.Uri
 import android.os.Build
@@ -17,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import org.tensorflow.lite.examples.imagesegmentation.databinding.ActivityPickImageBinding
 import org.tensorflow.lite.task.vision.segmenter.Segmentation
+import java.io.IOException
 
 class PickImageActivity : AppCompatActivity(), ImageSegmentationHelper.SegmentationListener {
     private lateinit var binding: ActivityPickImageBinding
@@ -54,16 +57,31 @@ class PickImageActivity : AppCompatActivity(), ImageSegmentationHelper.Segmentat
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null) {
             val selectedImageUri = data.data
             if (selectedImageUri != null) {
-//                val imageRatio = getImageSizeRatio(this@PickImageActivity, selectedImageUri)
-                val imageBitmap = getBitmapFromUri(this@PickImageActivity, selectedImageUri)
+                val imageBitmap = getBitmapFromUri(selectedImageUri)
                 val imageRotation = getImageRotation(this@PickImageActivity, selectedImageUri)
 
                 if (imageBitmap != null) {
-                    imageSegmentationHelper.segment(imageBitmap, imageRotation)
+                    val resizedImage = resizeBitmap(imageBitmap,720,1080)
+                    imageSegmentationHelper.segment(resizedImage, imageRotation)
                 }
             }
 
         }
+    }
+    private fun resizeBitmap(bitmap: Bitmap, newWidth: Int, newHeight: Int): Bitmap {
+        val width = bitmap.width
+        val height = bitmap.height
+
+        val scaleWidth = newWidth.toFloat() / width
+        val scaleHeight = newHeight.toFloat() / height
+
+        val matrix = Matrix()
+        matrix.postScale(scaleWidth, scaleHeight)
+
+        val resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0, width, height, matrix, false)
+        bitmap.recycle()
+
+        return resizedBitmap
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
@@ -88,32 +106,44 @@ class PickImageActivity : AppCompatActivity(), ImageSegmentationHelper.Segmentat
         return 0
     }
 
-    private fun getImageSizeRatio(context: Context, uri: Uri): Float {
-        val contentResolver: ContentResolver = context.contentResolver
 
-        val options = BitmapFactory.Options()
-        options.inJustDecodeBounds = true
+    private fun calculateInSampleSize(
+        options: BitmapFactory.Options,
+        reqWidth: Int,
+        reqHeight: Int
+    ): Int {
+        val imageWidth = options.outWidth
+        val imageHeight = options.outHeight
+        var inSampleSize = 1
 
-        val inputStream = contentResolver.openInputStream(uri)
-        BitmapFactory.decodeStream(inputStream, null, options)
-        inputStream?.close()
+        if (imageHeight > reqHeight || imageWidth > reqWidth) {
+            val halfHeight = imageHeight / 2
+            val halfWidth = imageWidth / 2
 
-        val width = options.outWidth
-        val height = options.outHeight
-        val ratio = width.toFloat() / height.toFloat()
+            while (halfHeight / inSampleSize >= reqHeight && halfWidth / inSampleSize >= reqWidth) {
+                inSampleSize *= 2
+            }
+        }
 
-        return ratio
+        return inSampleSize
     }
 
-    private fun getBitmapFromUri(context: Context, uri: Uri): Bitmap? {
-        val contentResolver: ContentResolver = context.contentResolver
-
+    private fun getBitmapFromUri(uri: Uri): Bitmap? {
         try {
             val inputStream = contentResolver.openInputStream(uri)
-            val bitmap = BitmapFactory.decodeStream(inputStream)
+            val options = BitmapFactory.Options()
+            options.inJustDecodeBounds = true
+            BitmapFactory.decodeStream(inputStream, null, options)
+
+            // Calculate inSampleSize
+            options.inSampleSize = calculateInSampleSize(options, 720, 1080)
+            options.inJustDecodeBounds = false
+
+            // Reset the input stream to start loading the full-sized image
             inputStream?.close()
-            return bitmap
-        } catch (e: Exception) {
+            val newInputStream = contentResolver.openInputStream(uri)
+            return BitmapFactory.decodeStream(newInputStream, null, options)
+        } catch (e: IOException) {
             e.printStackTrace()
         }
         return null
@@ -132,10 +162,6 @@ class PickImageActivity : AppCompatActivity(), ImageSegmentationHelper.Segmentat
         imageWidth: Int
     ) {
         this.runOnUiThread {
-//            fragmentCameraBinding.bottomSheetLayout.inferenceTimeVal.text =
-//                String.format("%d ms", inferenceTime)
-
-            // Pass necessary information to OverlayView for drawing on the canvas
 
             binding.overlay.setResults(
                 results,

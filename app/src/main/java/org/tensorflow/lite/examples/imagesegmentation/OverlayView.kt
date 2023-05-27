@@ -22,7 +22,6 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.util.AttributeSet
 import android.view.View
-import org.tensorflow.lite.task.vision.segmenter.ColoredLabel
 import org.tensorflow.lite.task.vision.segmenter.Segmentation
 import kotlin.math.max
 
@@ -111,12 +110,8 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
 
         fun getColor(): Int {
             // Use completely transparent for the background color.
-            return if (id == 0) Color.TRANSPARENT else Color.argb(
-                ALPHA_COLOR,
-                Color.red(rgbColor),
-                Color.green(rgbColor),
-                Color.blue(rgbColor)
-            )
+            return if (id == 0) Color.TRANSPARENT else Color.BLACK
+//            Color.argb(Color.BLACK, ALPHA_COLOR, Color.red(rgbColor), Color.green(rgbColor), Color.blue(rgbColor))
         }
     }
 }
